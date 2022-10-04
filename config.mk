@@ -1,0 +1,2 @@
+# dirs
+PREFIX := $(HOME)/.local
