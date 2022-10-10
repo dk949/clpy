@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-import os
 from sys import argv, exit, stdin, stderr
 from os import path, isatty
 from typing import Tuple
@@ -33,10 +32,15 @@ def parseArgs() -> Tuple[str, str]:
     return cmd, inp
 
 
+def imp(what: str):
+    exec(f"import {what}")
+    return eval(f"{what}")
+
+
 def main():
     cmd, inp = parseArgs()
     try:
-        print(eval(cmd, {"inp": inp}))
+        print(eval(cmd, {"inp": inp, "imp": imp}))
     except Exception as e:
         die(e)
 

@@ -1,2 +1,2 @@
 # dirs
-PREFIX := $(HOME)/.local
+PREFIX ?= $(HOME)/.local
