@@ -1,4 +1,6 @@
-# Clpy
+# clpy
+
+(Pronounced see-el-pi)
 
 A wrapper for python allowing it to be used like awk or sed.
 
