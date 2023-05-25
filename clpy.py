@@ -32,9 +32,7 @@ def parseArgs() -> Tuple[str, str]:
     return cmd, inp
 
 
-def imp(what: str):
-    exec(f"import {what}")
-    return eval(f"{what}")
+imp = __import__
 
 
 def main():
