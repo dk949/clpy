@@ -1,2 +1,5 @@
+VERSION = $(shell git describe)
+
 # dirs
-PREFIX ?= $(HOME)/.local
+PREFIX  ?=
+DESTDIR ?= $(HOME)/.local

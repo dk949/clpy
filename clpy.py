@@ -3,6 +3,7 @@ from sys import argv, exit, stdin, stderr
 from os import path, isatty
 from typing import Tuple
 
+VERSION = "unknown"
 
 def die(*args, **kwargs):
     print(*args, **kwargs, file=stderr)
@@ -19,8 +20,10 @@ def readFile(file: str) -> str:
 
 
 def parseArgs() -> Tuple[str, str]:
-    if len(argv) < 2 or len(argv) > 3:
+    if len(argv) < 2 or len(argv) > 3 or "-h" in argv or "--help" in argv:
         die("Uage:", path.basename(argv[0]), "CMD [FILE]")
+    if "-v" in argv or "--version" in argv:
+        die(VERSION)
 
     cmd = argv[1]
     if len(argv) == 3:

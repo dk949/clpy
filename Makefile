@@ -1,15 +1,17 @@
 include config.mk
 
 EXE = clpy.py
+DIR = $(DESTDIR)$(PREFIX)/bin/
 
 all:
+	sed 's/^VERSION =.*$$/VERSION = "$(VERSION)"/' clpy.py -i
 
 install: $(EXE)
-	mkdir -p $(PREFIX)/bin/
-	install $(EXE) $(PREFIX)/bin/$(basename $(EXE))
+	@mkdir -p $(DIR)
+	install $(EXE) $(DIR)/$(basename $(EXE))
 
 uninstall:
-	rm -f $(PREFIX)/bin/$(basename $(EXE))
+	rm -f $(DIR)/$(basename $(EXE))
 
 
 .PHONY: all install uninstall
