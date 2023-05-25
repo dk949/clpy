@@ -5,11 +5,12 @@
 A wrapper for python allowing it to be used like awk or sed.
 
 ## Install
-* `clpy` executable will be installed in `"$PREFIX/bin"`
-  * `$PREFIX` defaults to `$HOME/.local`.
+* `clpy` executable will be installed in `"${DESTDIR}${PREFIX}/bin"`
+  * `$DESTDIR` defaults to `$HOME/.local`.
+  * `$PREFIX` defaults to nothing.
 
 ``` sh
-PREFIX=/your/prefix make install
+make install
 ```
 
 ## Usage
