@@ -16,8 +16,8 @@ make install
 ## Usage
 
 Pass a single python statement as the first argument to the command. Optionally
- text can be piped into the command or a file name can be passed as second
- argument.
+text can be piped into the command or a file name can be passed as second
+argument.
 
 Contents of the file are stored in the `inp` variable.
 
