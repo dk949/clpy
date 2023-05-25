@@ -6,7 +6,7 @@ DIR = $(DESTDIR)$(PREFIX)/bin/
 all:
 	sed 's/^VERSION =.*$$/VERSION = "$(VERSION)"/' clpy.py -i
 
-install: $(EXE)
+install: all
 	@mkdir -p $(DIR)
 	install $(EXE) $(DIR)/$(basename $(EXE))
 
